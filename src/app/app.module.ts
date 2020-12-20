@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializer } from './utils/keycloak-init';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,17 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    KeycloakAngularModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
