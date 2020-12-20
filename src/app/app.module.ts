@@ -21,7 +21,7 @@ import { initializer } from './utils/keycloak-init';
       useFactory: initializer,
       multi: true,
       deps: [KeycloakService]
-    },
+    }
   ],
   bootstrap: [AppComponent]
 })
