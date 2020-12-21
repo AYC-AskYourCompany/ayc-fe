@@ -1,0 +1,18 @@
+@import "../../utils/variables";
+
+.navbar {
+  &-header {
+    margin-right: 10px;
+  }
+
+  &-link {
+    cursor: pointer;
+    font-size: $text-md;
+    font-weight: 200;
+    margin: 0 10px;
+  }
+
+  &-spacer {
+    flex: 1 1 auto;
+  }
+}

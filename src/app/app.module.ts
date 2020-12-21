@@ -7,10 +7,14 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializer } from './utils/keycloak-init';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterial } from './utils/angular-material';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { ProfileButtonComponent } from './shared/navbar/profile-button/profile-button.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    ProfileButtonComponent
   ],
   imports: [
     BrowserModule,
