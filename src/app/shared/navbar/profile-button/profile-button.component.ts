@@ -14,5 +14,4 @@ export class ProfileButtonComponent {
   logout(): void {
     this.logoutEvent.emit();
   }
-
 }
