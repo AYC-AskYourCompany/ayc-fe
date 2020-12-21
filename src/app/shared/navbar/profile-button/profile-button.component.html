@@ -1,0 +1,11 @@
+<button mat-button [matMenuTriggerFor]="settingsMenu" class="menu-button">{{ username }}</button>
+<mat-menu #settingsMenu="matMenu" class="menu-pop-up">
+  <button mat-menu-item>
+    Einstellungen
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button (click)="logout()" mat-menu-item>
+    Logout
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+</mat-menu>
