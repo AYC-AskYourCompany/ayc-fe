@@ -1,0 +1,12 @@
+<div class="settings-data-container">
+  <h4 class="settings-data-header">Persönliche Daten</h4>
+
+  <form [formGroup]="personalDataFormGroup">
+    <app-input-field [label]="'Username'" [formControlName]="'username'" [formGroup]="personalDataFormGroup"></app-input-field>
+    <app-input-field [label]="'E-Mail'" [formControlName]="'email'" [formGroup]="personalDataFormGroup"></app-input-field>
+    <app-input-field [label]="'Vorname'" [formControlName]="'firstName'" [formGroup]="personalDataFormGroup"></app-input-field>
+    <app-input-field [label]="'Nachname'" [formControlName]="'lastName'" [formGroup]="personalDataFormGroup"></app-input-field>
+  </form>
+
+  <button color="primary" (click)="savePersonalData()" mat-flat-button>Speichern</button>
+</div>
