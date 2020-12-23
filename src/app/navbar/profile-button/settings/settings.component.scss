@@ -1,0 +1,21 @@
+.content-wrapper {
+  .settings-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    &--profile-picture {
+      flex: 1;
+      min-width: 350px;
+    }
+
+    &--personal-data {
+      flex: 2;
+      min-width: 500px;
+    }
+
+    &--optional-data {
+      flex: 2;
+      min-width: 500px;
+    }
+  }
+}

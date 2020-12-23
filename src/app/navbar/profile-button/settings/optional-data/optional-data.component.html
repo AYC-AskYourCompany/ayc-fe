@@ -1,0 +1,14 @@
+<div class="settings-data-container">
+  <h4 class="settings-data-header">Optionale Daten</h4>
+
+  <form [formGroup]="optionalDataFormGroup">
+    <app-input-field [label]="'CompanyID'" [formControlName]="'companyId'" [formGroup]="optionalDataFormGroup"></app-input-field>
+    <app-input-field-chips [label]="'Schlüsselskills'" [formControlName]="'skills'"
+                           [formGroup]="optionalDataFormGroup" (changeInputValueEvent)="changedSkills($event)"></app-input-field-chips>
+    <app-input-field [label]="'Berufliche Position'" [formControlName]="'jobPosition'" [formGroup]="optionalDataFormGroup"></app-input-field>
+    <app-textarea [label]="'Persönliche Beschreibung'" [formControlName]="'personalDescription'"
+                  [textareaHeight]="150" [formGroup]="optionalDataFormGroup"></app-textarea>
+
+    <button color="primary" (click)="saveOptionalData()" mat-flat-button>Speichern</button>
+  </form>
+</div>

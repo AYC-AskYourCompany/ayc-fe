@@ -1,6 +1,6 @@
 <button mat-button [matMenuTriggerFor]="settingsMenu" class="menu-button">{{ username }}</button>
 <mat-menu #settingsMenu="matMenu" class="menu-pop-up">
-  <button mat-menu-item>
+  <button [routerLink]="['/settings']" mat-menu-item>
     Einstellungen
     <mat-icon>settings</mat-icon>
   </button>

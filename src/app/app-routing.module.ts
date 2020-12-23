@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SettingsComponent } from './navbar/profile-button/settings/settings.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'settings', component: SettingsComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
