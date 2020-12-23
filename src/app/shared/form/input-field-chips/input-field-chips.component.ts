@@ -1,8 +1,8 @@
-import {Component, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent, MatChipListChange} from '@angular/material/chips';
-import {Skills} from '../../../navbar/models/forms/skills';
-import {FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { Skills } from '../../../navbar/models/forms/skills';
+import { FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-input-field-chips',
@@ -16,7 +16,7 @@ import {FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
     }
   ]
 })
-export class InputFieldChipsComponent implements OnInit {
+export class InputFieldChipsComponent {
 
   @Input() label: string;
   @Input() formControlName: string;
@@ -31,9 +31,6 @@ export class InputFieldChipsComponent implements OnInit {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
@@ -63,4 +60,5 @@ export class InputFieldChipsComponent implements OnInit {
   registerOnTouched(): void { }
 
   writeValue(): void { }
+
 }

@@ -1,6 +1,6 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import {Skills} from '../../../models/forms/skills';
+import { Skills } from '../../../models/forms/skills';
 
 @Component({
   selector: 'app-optional-data',

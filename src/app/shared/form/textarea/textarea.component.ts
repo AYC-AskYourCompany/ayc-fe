@@ -1,5 +1,5 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
-import {FormGroup, NG_VALUE_ACCESSOR} from '@angular/forms';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-textarea',

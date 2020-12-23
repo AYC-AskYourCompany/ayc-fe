@@ -17,5 +17,4 @@ export class PersonalDataComponent {
   savePersonalData(): void {
     this.savePersonalDataEvent.emit();
   }
-
 }
