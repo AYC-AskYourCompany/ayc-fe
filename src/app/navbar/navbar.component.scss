@@ -16,3 +16,7 @@
     flex: 1 1 auto;
   }
 }
+
+.active-link {
+  border-bottom: 1px solid darken($primary, 25);
+}

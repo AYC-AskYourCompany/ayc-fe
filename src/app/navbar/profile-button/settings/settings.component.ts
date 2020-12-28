@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
-import { Skills } from '../../models/forms/skills';
+import { Skills } from '../../../models/forms/skills';
 
 @Component({
   selector: 'app-settings',

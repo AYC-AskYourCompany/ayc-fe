@@ -1,0 +1,14 @@
+<div class="projects-sidenav-container">
+  <mat-icon (click)="closeSidenav()">close</mat-icon>
+  <h3>Projekte</h3>
+
+  <button color="primary" (click)="openCreateProjectDialog()" mat-flat-button>Neues Projekt erstellen</button>
+
+  <h4>Übersicht Projekte</h4>
+
+  <mat-accordion>
+    <app-projects-panel></app-projects-panel>
+    <app-projects-panel></app-projects-panel>
+    <app-projects-panel></app-projects-panel>
+  </mat-accordion>
+</div>

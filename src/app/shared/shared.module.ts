@@ -22,7 +22,8 @@ import { TextareaComponent } from './form/textarea/textarea.component';
   exports: [
     InputFieldComponent,
     InputFieldChipsComponent,
-    TextareaComponent
+    TextareaComponent,
+    AngularMaterial
   ]
 })
 export class SharedModule { }
