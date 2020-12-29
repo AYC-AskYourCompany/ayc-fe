@@ -5,7 +5,7 @@ import { ProjectsSidenavComponent } from './projects-sidenav/projects-sidenav.co
 import { SharedModule } from '../shared/shared.module';
 import { ProjectsPanelComponent } from './projects-sidenav/projects-panel/projects-panel.component';
 import { CreateProjectsDialogComponent } from './projects-sidenav/create-projects-dialog/create-projects-dialog.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
