@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Projekt erstellen</h1>
+<div mat-dialog-content>
+  <form [formGroup]="createProjectFormGroup">
+    <app-input-field [label]="'Projektname'" [formControlName]="'projectTitle'" [formGroup]="createProjectFormGroup"></app-input-field>
+    <app-input-field [label]="'Teamgröße'" [formControlName]="'teamSize'" [formGroup]="createProjectFormGroup"></app-input-field>
+    <app-datepicker [label]="'Startdatum'" [formControlName]="'startDate'" [formGroup]="createProjectFormGroup"></app-datepicker>
+    <app-datepicker [label]="'Enddatum'" [formControlName]="'endDate'" [formGroup]="createProjectFormGroup"></app-datepicker>
+    <app-textarea [label]="'Projektbeschreibung'" [formControlName]="'projectDescription'" [formGroup]="createProjectFormGroup" [textareaHeight]="200"></app-textarea>
+  </form>
+</div>
+<div class="action-buttons-container" mat-dialog-actions>
+  <button color="warn" (click)="onNoClick()" mat-flat-button>Abbrechen</button>
+  <button color="primary" (click)="createProject()" mat-flat-button cdkFocusInitial>Erstellen</button>
+</div>

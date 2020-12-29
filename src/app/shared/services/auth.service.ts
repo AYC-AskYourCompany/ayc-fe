@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
-import { ModifiedKeycloakToken } from '../../navbar/models/auth/ModifiedKeycloakToken';
+import { ModifiedKeycloakToken } from '../../models/auth/ModifiedKeycloakToken';
 
 @Injectable({
   providedIn: 'root'

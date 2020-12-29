@@ -1,0 +1,24 @@
+@import "../utils/variables";
+
+mat-drawer-container {
+  height: calc(100% - 64px);
+
+  mat-drawer {
+    width: 300px;
+  }
+
+  mat-drawer-content {
+    .sidenav-closed-container {
+      display: flex;
+      height: 100%;
+      width: 50px;
+
+      mat-icon {
+        cursor: pointer;
+        font-size: 40px;
+        margin-left: 5px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

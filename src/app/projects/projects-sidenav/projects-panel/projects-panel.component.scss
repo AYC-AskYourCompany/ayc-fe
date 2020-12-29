@@ -1,0 +1,11 @@
+mat-expansion-panel {
+  i {
+    display: block;
+  }
+
+  .project-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterial } from './utils/angular-material';
 import { NavbarModule } from './navbar/navbar.module';
 import { SharedModule } from './shared/shared.module';
+import {ProjectsModule} from './projects/projects.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     NavbarModule,
     BrowserModule,
+    ProjectsModule,
     AngularMaterial,
     AppRoutingModule,
     KeycloakAngularModule,

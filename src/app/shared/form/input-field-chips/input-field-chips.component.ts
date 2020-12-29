@@ -1,7 +1,7 @@
 import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { Skills } from '../../../navbar/models/forms/skills';
+import { Skills } from '../../../models/forms/skills';
 import { FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
