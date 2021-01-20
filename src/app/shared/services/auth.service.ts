@@ -13,6 +13,10 @@ export class AuthService {
     this.tokenParsed = this.keycloakService.getKeycloakInstance().tokenParsed;
   }
 
+  public getToken(): string {
+    return this.keycloakService.getKeycloakInstance().token;
+  }
+
   public getUsername(): string {
     return this.tokenParsed.preferred_username;
   }
