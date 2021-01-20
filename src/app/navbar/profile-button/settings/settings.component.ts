@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth.service';
 import { Skills } from '../../../models/forms/skills';
+import { PersonalDataService } from './services/personal-data.service';
+import { OptionalDataService } from './services/optional-data.service';
+import { PersonalData } from '../../../models/user/personal-data';
 
 @Component({
   selector: 'app-settings',
@@ -11,18 +14,22 @@ import { Skills } from '../../../models/forms/skills';
 export class SettingsComponent implements OnInit {
 
   username: string;
+  personalData: PersonalData;
   personalDataFormGroup: FormGroup;
   optionalDataFormGroup: FormGroup;
   optionalDataSkills: Skills[] = [];
 
   constructor(private fb: FormBuilder,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private personalDataService: PersonalDataService,
+              private optionalDataService: OptionalDataService) {
     this.username = 'msauter';
   }
 
   ngOnInit(): void {
     this.initializePersonalDataForm();
     this.initializeOptionalDataForm();
+    this.setValuesOfForms();
   }
 
   setOptionalDataSkills(skills: Skills[]): void {
@@ -30,12 +37,12 @@ export class SettingsComponent implements OnInit {
   }
 
   savePersonalData(): void {
-    console.log(this.personalDataFormGroup.getRawValue());
+    this.personalDataService.saveUserData(this.personalDataFormGroup.getRawValue()).subscribe();
   }
 
   saveOptionalData(): void {
     this.optionalDataFormGroup.get('skills').setValue(this.optionalDataSkills);
-    console.log(this.optionalDataFormGroup.getRawValue());
+    this.optionalDataService.saveOptionalData(this.optionalDataFormGroup.getRawValue()).subscribe();
   }
 
   private initializePersonalDataForm(): void {
@@ -54,8 +61,21 @@ export class SettingsComponent implements OnInit {
     this.optionalDataFormGroup = this.fb.group({
       companyId: [''],
       skills: [''],
-      jobPosition: [''],
+      professionalPosition: [''],
       personalDescription: ['']
     });
+  }
+
+  private setValuesOfForms(): void {
+    this.personalDataService.getUserData().subscribe(
+      personalData => {
+        if (personalData) {
+          const clonedPersonalData = Object.assign({}, personalData);
+          delete clonedPersonalData.optionalData;
+
+          this.optionalDataFormGroup.setValue(personalData.optionalData);
+          this.personalDataFormGroup.setValue(clonedPersonalData);
+        }
+      });
   }
 }

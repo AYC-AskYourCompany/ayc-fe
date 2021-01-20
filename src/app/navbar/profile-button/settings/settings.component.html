@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper" *ngIf="personalDataFormGroup && optionalDataFormGroup">
   <h1>Einstellungen {{ username }}</h1>
 
   <div class="settings-container">
@@ -6,10 +6,13 @@
       <app-profile-picture [username]="'msauter'"></app-profile-picture>
     </div>
     <div class="settings-container--personal-data">
-      <app-personal-data [personalDataFormGroup]="personalDataFormGroup" (savePersonalDataEvent)="savePersonalData()"></app-personal-data>
+      <app-personal-data [personalDataFormGroup]="personalDataFormGroup"
+                         (savePersonalDataEvent)="savePersonalData()"></app-personal-data>
     </div>
     <div class="settings-container--optional-data">
-      <app-optional-data [optionalDataFormGroup]="optionalDataFormGroup" (saveOptionalDataEvent)="saveOptionalData()" (inputSkills)="setOptionalDataSkills($event)"></app-optional-data>
+      <app-optional-data [optionalDataFormGroup]="optionalDataFormGroup"
+                         (saveOptionalDataEvent)="saveOptionalData()"
+                         (inputSkills)="setOptionalDataSkills($event)"></app-optional-data>
     </div>
   </div>
 </div>
