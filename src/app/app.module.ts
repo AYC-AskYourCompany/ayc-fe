@@ -10,7 +10,7 @@ import { AngularMaterial } from './utils/angular-material';
 import { NavbarModule } from './navbar/navbar.module';
 import { SharedModule } from './shared/shared.module';
 import { ProjectsModule } from './projects/projects.module';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
 
 @NgModule({

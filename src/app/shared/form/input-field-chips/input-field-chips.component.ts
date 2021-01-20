@@ -43,7 +43,7 @@ export class InputFieldChipsComponent implements OnInit {
     const value = event.value;
 
     if ((value || '').trim()) {
-      this.list.push({skill: value.trim()});
+      this.list.push({ skill: value.trim() });
     }
 
     if (input) {
@@ -52,8 +52,8 @@ export class InputFieldChipsComponent implements OnInit {
     this.changeInputValueEvent.emit(this.list);
   }
 
-  remove(fruit: Skills): void {
-    const index = this.list.indexOf(fruit);
+  remove(chip: Skills): void {
+    const index = this.list.indexOf(chip);
 
     if (index >= 0) {
       this.list.splice(index, 1);
