@@ -5,6 +5,8 @@ import { Skills } from '../../../models/forms/skills';
 import { PersonalDataService } from './services/personal-data.service';
 import { OptionalDataService } from './services/optional-data.service';
 import { PersonalData } from '../../../models/user/personal-data';
+import { ToasterService } from 'angular2-toaster';
+import { PopUpConst } from '../../../shared/const/pop-up-const';
 
 @Component({
   selector: 'app-settings',
@@ -21,9 +23,10 @@ export class SettingsComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
+              private toasterService: ToasterService,
               private personalDataService: PersonalDataService,
               private optionalDataService: OptionalDataService) {
-    this.username = 'msauter';
+    this.username = this.authService.getUsername();
   }
 
   ngOnInit(): void {
@@ -37,12 +40,18 @@ export class SettingsComponent implements OnInit {
   }
 
   savePersonalData(): void {
-    this.personalDataService.saveUserData(this.personalDataFormGroup.getRawValue()).subscribe();
+    this.personalDataService.saveUserData(this.personalDataFormGroup.getRawValue())
+      .subscribe(personalData =>
+        this.toasterService.pop('success', PopUpConst.PERSONAL_DATA_SUCCESS_TITLE, PopUpConst.PERSONAL_DATA_SUCCESS_BODY)
+      );
   }
 
   saveOptionalData(): void {
     this.optionalDataFormGroup.get('skills').setValue(this.optionalDataSkills);
-    this.optionalDataService.saveOptionalData(this.optionalDataFormGroup.getRawValue()).subscribe();
+    this.optionalDataService.saveOptionalData(this.optionalDataFormGroup.getRawValue())
+      .subscribe(optionalData =>
+        this.toasterService.pop('success', PopUpConst.OPTIONAL_DATA_SUCCESS_TITLE, PopUpConst.OPTIONAL_DATA_SUCCESS_BODY)
+      );
   }
 
   private initializePersonalDataForm(): void {

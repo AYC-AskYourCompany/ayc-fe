@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
+import {AuthService} from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,12 @@ import { KeycloakService } from 'keycloak-angular';
 })
 export class NavbarComponent {
 
-  constructor(private keycloakService: KeycloakService) { }
+  username: string;
+
+  constructor(private authService: AuthService,
+              private keycloakService: KeycloakService) {
+    this.username = this.authService.getUsername();
+  }
 
   logout(): void {
     this.keycloakService.logout();
