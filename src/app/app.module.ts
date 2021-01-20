@@ -12,7 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { ProjectsModule } from './projects/projects.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorService } from './shared/services/http-interceptor.service';
-import {ToasterModule} from 'angular2-toaster';
+import { ToasterModule } from 'angular2-toaster';
 
 @NgModule({
   declarations: [

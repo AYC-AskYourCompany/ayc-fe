@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { PersonalData } from '../../../../models/user/personal-data';
 import { environment } from '../../../../../environments/environment';
 import { OptionalData } from '../../../../models/user/optional-data';
-import {AuthService} from '../../../../shared/services/auth.service';
+import { AuthService } from '../../../../shared/services/auth.service';
 
 @Injectable({
   providedIn: 'root'

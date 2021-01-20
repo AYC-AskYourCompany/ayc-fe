@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
-import {AuthService} from '../shared/services/auth.service';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
