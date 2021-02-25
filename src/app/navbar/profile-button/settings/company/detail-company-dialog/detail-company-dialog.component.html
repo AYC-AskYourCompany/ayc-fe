@@ -1,0 +1,26 @@
+<h1 class="detail-company-header" mat-dialog-title>
+  {{ detailCompany.companyName }}
+  <app-detail-company-delete (deleteCompanyEvent)="deleteCompany()" *ngIf="isCeo()"></app-detail-company-delete>
+</h1>
+<div mat-dialog-content>
+  <app-detail-company-information-container
+    [label]="'FirmenID'"
+    [information]="detailCompany.companyId"></app-detail-company-information-container>
+  <app-detail-company-information-container
+    [label]="'CEO'"
+    [information]="detailCompany.ceo"></app-detail-company-information-container>
+  <app-detail-company-information-container
+    [label]="'Firmenbeschreibung'"
+    [information]="detailCompany.companyDescription"></app-detail-company-information-container>
+  <div class="company-members">
+    Firmenmitglieder:
+    <app-detail-company-information-company-member
+      *ngFor="let companyMember of detailCompany.companyMembers"
+      [companyMember]="companyMember.companyMember"
+      [isCeo]="isCeo() || this.authService.getUsername() == companyMember.companyMember"
+      (deleteMemberEvent)="deleteMember($event)"></app-detail-company-information-company-member>
+  </div>
+</div>
+<div class="action-buttons-container" mat-dialog-actions>
+  <button color="warn" (click)="onNoClick()" mat-flat-button>Schliessen</button>
+</div>

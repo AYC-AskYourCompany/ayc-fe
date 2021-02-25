@@ -1,0 +1,8 @@
+<div class="settings-data-container">
+  <h4 class="settings-data-header">Firmenübersicht</h4>
+  <div class="company-container">
+    <app-company-container *ngFor="let company of companies | async" [company]="company"
+                           (click)="openDetailCompanyDialog(company)"></app-company-container>
+  </div>
+  <button (click)="openCreateCompanyDialog()" mat-flat-button>Firma erstellen</button>
+</div>

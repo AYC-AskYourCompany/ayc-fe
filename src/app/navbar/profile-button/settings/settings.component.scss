@@ -5,17 +5,22 @@
 
     &--profile-picture {
       flex: 1;
-      min-width: 350px;
+      min-width: 300px;
+    }
+
+    &--company {
+      flex: 1;
+      min-width: 700px;
     }
 
     &--personal-data {
       flex: 2;
-      min-width: 500px;
+      min-width: 100%;
     }
 
     &--optional-data {
       flex: 2;
-      min-width: 500px;
+      min-width: 100%;
     }
   }
 }

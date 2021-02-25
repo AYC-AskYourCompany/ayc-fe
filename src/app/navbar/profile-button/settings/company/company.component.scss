@@ -1,0 +1,14 @@
+@import "../../../../utils/variables";
+
+.settings-data-container {
+  .company-container {
+    margin-bottom: 10px;
+    max-height: 240px;
+    overflow-y: scroll;
+  }
+
+  button {
+    border: 1px solid $primary;
+    border-radius: 0;
+  }
+}

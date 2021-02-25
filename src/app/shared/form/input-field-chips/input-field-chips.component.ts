@@ -1,7 +1,6 @@
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { Skills } from '../../../models/forms/skills';
 import { FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -21,11 +20,12 @@ export class InputFieldChipsComponent implements OnInit {
   @Input() label: string;
   @Input() formControlName: string;
   @Input() formGroup: FormGroup;
-  @Input() chipsList: Skills[];
+  @Input() chipsList: any;
+  @Input() objectKey: string;
 
-  @Output() changeInputValueEvent = new EventEmitter<Skills[]>();
+  @Output() changeInputValueEvent = new EventEmitter<any[]>();
 
-  list: Skills[] = [];
+  list: any[] = [];
   selectable = true;
   removable = true;
   addOnBlur = true;
@@ -43,7 +43,7 @@ export class InputFieldChipsComponent implements OnInit {
     const value = event.value;
 
     if ((value || '').trim()) {
-      this.list.push({ skill: value.trim() });
+      this.list.push({ [this.objectKey]: value.trim() });
     }
 
     if (input) {
@@ -52,7 +52,7 @@ export class InputFieldChipsComponent implements OnInit {
     this.changeInputValueEvent.emit(this.list);
   }
 
-  remove(chip: Skills): void {
+  remove(chip: any): void {
     const index = this.list.indexOf(chip);
 
     if (index >= 0) {

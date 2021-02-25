@@ -11,6 +11,13 @@ import { AngularMaterial } from '../utils/angular-material';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CompanyComponent } from './profile-button/settings/company/company.component';
+import { CreateCompanyDialogComponent } from './profile-button/settings/company/create-company-dialog/create-company-dialog.component';
+import { CompanyContainerComponent } from './profile-button/settings/company/company-container/company-container.component';
+import { DetailCompanyDialogComponent } from './profile-button/settings/company/detail-company-dialog/detail-company-dialog.component';
+import { DetailCompanyInformationContainerComponent } from './profile-button/settings/company/detail-company-dialog/detail-company-information-container/detail-company-information-container.component';
+import { DetailCompanyInformationCompanyMemberComponent } from './profile-button/settings/company/detail-company-dialog/detail-company-information-company-member/detail-company-information-company-member.component';
+import { DetailCompanyDeleteComponent } from './profile-button/settings/company/detail-company-dialog/detail-company-delete/detail-company-delete.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +27,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     OptionalDataComponent,
     ProfileButtonComponent,
     ProfilePictureComponent,
+    CompanyComponent,
+    CreateCompanyDialogComponent,
+    CompanyContainerComponent,
+    DetailCompanyDialogComponent,
+    DetailCompanyInformationContainerComponent,
+    DetailCompanyInformationCompanyMemberComponent,
+    DetailCompanyDeleteComponent,
   ],
   imports: [
     CommonModule,

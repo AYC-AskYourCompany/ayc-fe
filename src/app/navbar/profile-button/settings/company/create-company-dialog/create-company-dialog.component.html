@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Firma erstellen</h1>
+<div mat-dialog-content>
+  <form [formGroup]="companyDataFormGroup">
+    <app-input-field [formGroup]="companyDataFormGroup" [formControlName]="'companyName'" [label]="'Firmenname'"></app-input-field>
+    <app-input-field [formGroup]="companyDataFormGroup" [formControlName]="'ceo'" [label]="'CEO'"></app-input-field>
+    <app-textarea [formGroup]="companyDataFormGroup" [formControlName]="'companyDescription'"
+                  [label]="'Firmenbeschreibung'" [textareaHeight]="'300'"></app-textarea>
+    <app-input-field-chips [formGroup]="companyDataFormGroup" [formControlName]="'companyMembers'"
+                  [label]="'Mitarbeiter'" [objectKey]="'companyMember'"
+                  [chipsList]="companyMembers" (changeInputValueEvent)="changedCompanyMember($event)"></app-input-field-chips>
+  </form>
+</div>
+<div class="action-buttons-container" mat-dialog-actions>
+  <button color="warn" (click)="onNoClick()" mat-flat-button>Abbrechen</button>
+  <button color="primary" (click)="createCompany()" mat-flat-button cdkFocusInitial>Erstellen</button>
+</div>

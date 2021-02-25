@@ -1,0 +1,10 @@
+<div class="detail-company-members-container">
+  <span matTooltip="Klick für Details" class="detail-company-members">
+    {{ companyMember }}
+  </span>
+  <mat-icon *ngIf="isCeo"
+            matTooltip="Firmenmitglied entfernen"
+            class="delete-member-icon"
+            (click)="deleteMember()">disabled_by_default</mat-icon>
+</div>
+

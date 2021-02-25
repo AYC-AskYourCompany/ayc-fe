@@ -1,0 +1,10 @@
+@import "../../../../../../utils/variables";
+
+.detail-company-container {
+  border-bottom: 1px solid $primary;
+  margin-bottom: 30px;
+
+  &-information {
+    font-weight: bold;
+  }
+}
