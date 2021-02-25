@@ -7,6 +7,9 @@ import { OptionalDataService } from './services/optional-data.service';
 import { PersonalData } from '../../../models/user/personal-data';
 import { ToasterService } from 'angular2-toaster';
 import { PopUpConst } from '../../../shared/const/pop-up-const';
+import { CompanyService } from './services/company.service';
+import { Company } from '../../../models/company/company';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
@@ -20,10 +23,12 @@ export class SettingsComponent implements OnInit {
   personalDataFormGroup: FormGroup;
   optionalDataFormGroup: FormGroup;
   optionalDataSkills: Skills[] = [];
+  companies: Observable<Company[]>;
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private toasterService: ToasterService,
+              private companyService: CompanyService,
               private personalDataService: PersonalDataService,
               private optionalDataService: OptionalDataService) {
     this.username = this.authService.getUsername();
@@ -33,6 +38,7 @@ export class SettingsComponent implements OnInit {
     this.initializePersonalDataForm();
     this.initializeOptionalDataForm();
     this.setValuesOfForms();
+    this.getCompanies();
   }
 
   setOptionalDataSkills(skills: Skills[]): void {
@@ -86,5 +92,9 @@ export class SettingsComponent implements OnInit {
           this.personalDataFormGroup.setValue(clonedPersonalData);
         }
       });
+  }
+
+  private getCompanies(): void {
+    this.companies = this.companyService.getCompanyByUsername();
   }
 }

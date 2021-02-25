@@ -1,0 +1,6 @@
+<div class="company-container" matTooltip="Klick für Details">
+  <span class="company-container-headline">{{ company.companyName }}</span>
+  <mat-icon [matBadge]="company.companyMembers.length" matBadgeColor="primary">groups</mat-icon>
+  <div>CEO: {{ company.ceo }}</div>
+  <div class="company-container-description">{{ company.companyDescription }}</div>
+</div>

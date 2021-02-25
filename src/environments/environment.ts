@@ -9,5 +9,6 @@ const keycloakConfig: KeycloakConfig = {
 export const environment = {
   production: false,
   keycloakConfig,
-  USER_SERVICE_URL: 'http://localhost:8079'
+  USER_SERVICE_URL: 'http://localhost:8079',
+  COMPANY_SERVICE_URL: 'http://localhost:8078'
 };

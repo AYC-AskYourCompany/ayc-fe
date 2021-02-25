@@ -1,0 +1,21 @@
+@import '../../../../../../utils/variables';
+
+.detail-company-members-container {
+  display: inline-block;
+  margin-right: 10px;
+
+  .detail-company-members {
+    border: 1px solid $primary;
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: .5s all;
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  .delete-member-icon {
+    cursor: pointer;
+  }
+}

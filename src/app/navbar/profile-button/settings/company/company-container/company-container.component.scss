@@ -1,0 +1,26 @@
+@import "../../../../../utils/variables";
+
+.company-container {
+  border: 1px solid $primary;
+  margin-bottom: 20px;
+  padding: 15px;
+  transition: .9s all;
+
+  &:hover {
+    background-color: $accent;
+    cursor: pointer;
+  }
+
+  &-headline {
+    font-size: $text-md;
+    font-weight: bold;
+  }
+
+  mat-icon {
+    float: right;
+  }
+
+  &-description {
+    font-style: italic;
+  }
+}
