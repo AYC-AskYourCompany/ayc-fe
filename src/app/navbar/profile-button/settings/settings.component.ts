@@ -7,9 +7,9 @@ import { OptionalDataService } from './services/optional-data.service';
 import { PersonalData } from '../../../models/user/personal-data';
 import { ToasterService } from 'angular2-toaster';
 import { PopUpConst } from '../../../shared/const/pop-up-const';
-import {CompanyService} from './services/company.service';
-import {Company} from '../../../models/company/company';
-import {BehaviorSubject, Observable} from 'rxjs';
+import { CompanyService } from './services/company.service';
+import { Company } from '../../../models/company/company';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
@@ -54,7 +54,6 @@ export class SettingsComponent implements OnInit {
 
   saveOptionalData(): void {
     this.optionalDataFormGroup.get('skills').setValue(this.optionalDataSkills);
-    console.log(this.optionalDataFormGroup.getRawValue());
     this.optionalDataService.saveOptionalData(this.optionalDataFormGroup.getRawValue())
       .subscribe(optionalData =>
         this.toasterService.pop('success', PopUpConst.OPTIONAL_DATA_SUCCESS_TITLE, PopUpConst.OPTIONAL_DATA_SUCCESS_BODY)

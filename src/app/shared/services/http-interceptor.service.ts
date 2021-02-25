@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
-import {ToasterService} from 'angular2-toaster';
-import {PopUpConst} from '../const/pop-up-const';
-import {catchError} from 'rxjs/operators';
+import { ToasterService } from 'angular2-toaster';
+import { PopUpConst } from '../const/pop-up-const';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

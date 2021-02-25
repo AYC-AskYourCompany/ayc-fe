@@ -1,11 +1,11 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../../../shared/services/auth.service';
 import { Skills } from '../../../../../models/forms/skills';
-import {CompanyService} from '../../services/company.service';
-import {ToasterService} from 'angular2-toaster';
-import {PopUpConst} from '../../../../../shared/const/pop-up-const';
+import { CompanyService } from '../../services/company.service';
+import { ToasterService } from 'angular2-toaster';
+import { PopUpConst } from '../../../../../shared/const/pop-up-const';
 
 @Component({
   selector: 'app-create-company-dialog',

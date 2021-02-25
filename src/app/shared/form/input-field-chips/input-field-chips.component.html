@@ -3,7 +3,7 @@
   <mat-chip-list #chipList aria-label="Fruit selection" [formControlName]="formControlName">
     <mat-chip *ngFor="let chip of list" [selectable]="selectable"
               [removable]="removable" (removed)="remove(chip)">
-      {{chip[objectKey]}}
+      {{ chip[objectKey] }}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
     <input [placeholder]="label + ' mit &quot;Enter&quot; oder &quot;,&quot; trennen'"
